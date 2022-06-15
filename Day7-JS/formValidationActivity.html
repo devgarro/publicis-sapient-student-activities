@@ -1,0 +1,58 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Login Form</h2><hr/>
+    <form name = 'login' action = 'panda.jfif' method = "post" onsubmit = "return handleSubmit()">
+            First Name<input type = "text" name ="fn"/> <br/>
+            Last Name <input type = "text" name = "ln"><br/>
+            Gender<input type = "radio" id = "male" name ="gender"/><label for="male">Male</label>
+                <input type = "radio" id = "female" name ="gender"/><label for="female">Female</label><br/>
+            Password<input type = "password" name = "pass"><br/>
+            Confirm Password <input type = "password" name = "cPass"><br/>
+            Skills<input type = "checkbox" id = "Java" name ="skills"/><label for="Java">Java</label>
+                        <input type = "checkbox" id = "C" name ="skills"/><label for="C">C</label>
+                        <input type = "checkbox" id = "HTML" name ="skills"/><label for="HTML">HTML</label>
+                        <input type = "checkbox" id = "Python" name ="skills"/><label for="Python">Python</label> <br/>
+            <input type = "submit" name = "login"/>
+    </form>
+    <script type = 'text/javascript'>
+        function handleSubmit(){
+            let loginForm = document.login;
+            let first = loginForm.fn;
+            let last = loginForm.ln;
+            let g = loginForm.gender;
+            let p = loginForm.pass;
+            let cp = loginForm.cPass
+            let s = loginForm.skills
+
+            
+            if(first.value.length < 3){
+                alert('First name is too short');
+                return false;
+            }
+            if(last.value.length < 2){
+                alert('Last name is too short');
+                return false;
+            }
+            if(g.value != 'on'){
+                alert('Select a gender');
+                return false
+            }
+            if(p.value != cp.value){
+                alert('Passwords dont match');
+                return false
+            }
+            if(!s[0].checked && !s[1].checked && !s[2].checked && !s[3].checked ){
+                alert('Select at least 1 skill')
+                return false
+            }
+            return true
+        }
+    </script>
+</body>
+</html>

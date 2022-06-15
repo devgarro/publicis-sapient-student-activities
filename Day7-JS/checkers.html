@@ -1,0 +1,30 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id = "c1" style = "border: 2px solid black" width = "400" height = '400"'></canvas>
+    <script type = "text/javascript">
+        //getcontext("2d") gives canvas object
+        let ctx = document.getElementById('c1').getContext('2d');
+        //fillRect(x, y, w, h)
+        ctx.fillStyle = 'black'
+        for(let j = 0; j<8; j++){
+            for(let i = 0; i<8; i++){
+                console.log(i%2 == 0)
+                if((i+j)%2 == 0){
+                    ctx.fillStyle = 'hotpink'
+                }else{
+                    ctx.fillStyle = 'white'
+                }
+                ctx.fillRect(0+50*j, 0+50*i, 50, 50);
+            }
+        }
+    
+    </script>
+    
+</body>
+</html>

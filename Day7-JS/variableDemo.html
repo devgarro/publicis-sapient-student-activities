@@ -1,0 +1,26 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Demo on JS</h1>
+    <script type = "text/javascript">
+        for(var v = 0; v<10; v++){
+            let x = 2;
+            if((v%x) == 0){
+                document.write('<p>v = '+v+'</p>')
+            }
+        }
+        //can be accessed outside block it's defined in
+        document.write('<p>value of x: '+window.x+'</p>')
+
+        let items = [2, 1, 3, 5, 4]
+        for(let index = 0; index < items.length; index++){
+            document.write('<p>items = '+items[index]+'</p>')
+        }
+    </script>
+</body>
+</html>
