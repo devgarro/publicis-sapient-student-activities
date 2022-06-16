@@ -1,0 +1,44 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id = "root"></div>
+
+
+    <!--adding 3 libraries-->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!--creating components inside script-->
+    <script type = "text/babel">
+        function UserList(){
+            let list = [{name: "Alex",age: 35, gender: "Male"}, {name:"Suma", age: 40, gender: "Female"}]
+            return(<div>
+                {
+                    //auto funct
+                    list.map(item => (<tr><td>{item.name}</td><td>{item.age}</td><td>{item.gender}</td></tr>))
+                }
+                </div>)
+        }
+        
+        //creating a component
+        function App(){
+            return(<div>
+                <h1>Users table</h1>
+                <table border = "1">               
+                    <tbody>
+                        <UserList/>
+                    </tbody>
+                </table>
+                </div>)
+        }
+        //patching component to browser DOM
+        ReactDOM.render(<App/>, document.getElementById('root'));
+    </script>
+</body>
+</html>
